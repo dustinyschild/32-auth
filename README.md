@@ -42,8 +42,8 @@
 * create a simple front end for your cf-gram (or comparable) API
 * create a landing page that enables a user to signup and signin
   * redirect the user to the dashboard page on signup or signin
-  * store the users token in a cookie *or* `localStorage` on signin
+  * store the users token in `localStorage` on signin
 
 #### Test
 * test your redux reducers
-* test your `util` methods
+* **optional:** test your `util` methods
