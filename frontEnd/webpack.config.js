@@ -4,9 +4,9 @@ const path = require('path');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
-  entry: './frontEnd/src/main.js',
+  entry: './src/main.js',
   output: {
-    path: __dirname + '/frontEnd/dist',
+    path: __dirname + '/dist',
     filename: 'app.bundle.js'
   },
   module: {
@@ -29,7 +29,7 @@ module.exports = {
     historyApiFallback: true,
     contentBase: path.join(__dirname, 'dist'),
     compress: true,
-    port: 5000,
+    port: 3000,
     stats: 'errors-only'
   },
   plugins: [
@@ -38,7 +38,7 @@ module.exports = {
       minify: {
         collapseWhitespace: false
       },
-      template: './frontEnd/src/index.ejs', // Load a custom template (ejs by default see the FAQ for details)
+      template: './src/index.ejs', // Load a custom template (ejs by default see the FAQ for details)
     }),
     new ExtractTextPlugin({
       filename: 'style/main.css',

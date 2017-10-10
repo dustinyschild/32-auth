@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
         <GalleryForm createGallery={this.props.createGallery}/>
         <div>
           <h2>Galleries</h2>
-          {this.props.galleryies.map(gallery => {
+          {this.props.galleries.map(gallery => {
             return(<p key={gallery._id}>{gallery.name}</p>);
           })}
         </div>
@@ -27,7 +27,7 @@ class Dashboard extends React.Component {
 const mapStateToProps = state => ({ galleries: state.galleries });
 
 const mapDispatchToProps = dispatch => ({
-  creategallery: gallery => dispatch(galleryActions.galleryCreateRequest(gallery)),
+  createGallery: gallery => dispatch(galleryActions.galleryCreateRequest(gallery)),
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(Dashboard);

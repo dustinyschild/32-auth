@@ -16,7 +16,7 @@ export default class galleryForm extends React.Component {
 
   handleSubmit(event){
     event.preventDefault();
-    this.props.creategallery(this.state);
+    this.props.createGallery(this.state);
   }
 
   render(){
