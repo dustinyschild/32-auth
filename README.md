@@ -16,7 +16,8 @@
 ## Requirements
 #### Configuration
 #### backend
-* clone [sluggram-backend](http://github.com/slugbyte/sluggram)
+* Use a [Git submodule](https://git-scm.com/docs/git-submodule) to bring a backend into your project
+  * `git submodule add https://github.com/DeltaVCode-cr-401js-2017/19-deployment-demo.git backend`
 
 ##### frontend
 * `README.md`
@@ -39,7 +40,7 @@
   * `_content.scss`
 
 #### Feature Tasks
-* create a simple front end for your cf-gram (or comparable) API
+* create a simple front end for your photo upload API
 * create a landing page that enables a user to signup and signin
   * redirect the user to the dashboard page on signup or signin
   * store the users token in `localStorage` on signin
