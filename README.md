@@ -1,4 +1,4 @@
-![cf](https://i.imgur.com/7v5ASc8.png) 32: Authentication and Authorization
+![DV](https://www.deltavcodeschool.com/wp-content/uploads/DeltaV.png) 32: Authentication and Authorization
 ======
 
 ## Submission Instructions
