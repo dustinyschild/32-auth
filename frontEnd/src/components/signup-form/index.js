@@ -1,19 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as authActions from '../../action/auth-actions';
 
-export default class SignUpForm extends React.Component {
+class SignUpForm extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      email: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(event){
+    event.preventDefault();
+    this.props.signUp(this.state);
   }
 
   handleChange(event){
-    event.preventDefault();
     this.setState({
       [event.target.name]: event.target.value
     });
@@ -21,7 +29,7 @@ export default class SignUpForm extends React.Component {
 
   render(){
     return(
-      <form >
+      <form onSubmit={this.handleSubmit}>
         <input
           name="username"
           type="text"
@@ -36,7 +44,24 @@ export default class SignUpForm extends React.Component {
           value={this.state.password}
           onChange={this.handleChange}
         />
+        <input
+          name="email"
+          type="text"
+          placeholder="email"
+          value={this.state.email}
+          onChange={this.handleChange}
+        />
+        <button type="submit">
+          Submit
+        </button>
       </form>
     );
   }
 }
+
+const mapStateToProps = state => ({});
+const mapDispatchToProps = dispatch => ({
+  signUp: user => dispatch(authActions.signupRequest(user)),
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(SignUpForm);

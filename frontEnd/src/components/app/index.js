@@ -19,7 +19,7 @@ export default class App extends React.Component {
               <nav>
                 <ul>
                   <li><Link to={'/'}>Home</Link></li>
-                  <li><Link to={'/home/signup'}>Sign In</Link></li>
+                  <li><Link to={'/home/signup'}>Sign Up</Link></li>
                 </ul>
               </nav>
               <Switch>
