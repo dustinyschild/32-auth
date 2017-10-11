@@ -7,6 +7,7 @@ import { Provider } from 'react-redux';
 const store = createAppStore();
 
 import SignUpForm from '../signup-form';
+import SignInForm from '../signin-form';
 import Dashboard from '../dashboard-container';
 
 export default class App extends React.Component {
@@ -20,10 +21,12 @@ export default class App extends React.Component {
                 <ul>
                   <li><Link to={'/'}>Home</Link></li>
                   <li><Link to={'/home/signup'}>Sign Up</Link></li>
+                  <li><Link to={'/home/signin'}>Sign In</Link></li>
                 </ul>
               </nav>
               <Switch>
                 <Route exact path='/home/signup' component={SignUpForm}/>
+                <Route exact path='/home/signin' component={SignInForm}/>
                 <Route exact path='/' component={() => <div>Welcome to my app!</div>} /> //Landing Page
                 <Route component={() => (<h1>Not Found</h1>)}/>
               </Switch>

@@ -20,3 +20,15 @@ export const signupRequest = user => dispatch => {
     })
     .catch(err => console.log(err));
 };
+
+export const signinRequest = user => dispatch => {
+  return request.get(`http://localhost:5000/api/signin`)
+    .auth(user.username,user.password)
+    .then(res => {
+      dispatch(tokenSet(res.text));
+
+      localStorage.token = res.text;
+      return res;
+    })
+    .catch(err => console.log(err));
+};
