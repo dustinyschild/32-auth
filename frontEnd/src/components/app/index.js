@@ -22,13 +22,18 @@ class App extends React.Component {
   render(){
     return (
       <div>
-        <header>
-          <aside>
-            <button onClick={this.handleClick}>Sign Out</button>
-          </aside>
-        </header>
+
         <Router>
           <section>
+            <header>
+              {this.props.auth ?
+                (<aside>
+                  <li><Link to={'/home/dashboard'}>Dashboard</Link></li>
+                  <button onClick={this.handleClick}>Sign Out</button>
+                </aside>) :
+                (<span><Link to={'/home/signin'}>Sign In Here!</Link></span>)
+              }
+            </header>
             <nav>
               <ul>
                 <li><Link to={'/'}>Home</Link></li>
@@ -39,6 +44,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path='/home/signup' component={SignUpForm}/>
               <Route exact path='/home/signin' component={SignInForm}/>
+              <Route exact path='/home/dashboard' component={Dashboard}/>
               <Route exact path='/' component={() => <div>Welcome to my app!</div>} /> //Landing Page
               <Route component={() => (<h1>Not Found</h1>)}/>
             </Switch>
@@ -49,9 +55,9 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({ auth: state.auth});
 const mapDispatchToProps = dispatch => ({
-  signOut: () => dispatch(authActions.tokenDelete()),
+  signOut: () => dispatch(authActions.signOut()),
 });
 
 export default connect(mapStateToProps,mapDispatchToProps)(App);

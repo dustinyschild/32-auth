@@ -30,6 +30,8 @@ export default (state = initialState,action = {}) => {
       return state.filter(gallery => {
         return gallery._id !== payload._id;
       });
+    case 'GALLERY_SET':
+      return payload;
     default:
       return state;
   }

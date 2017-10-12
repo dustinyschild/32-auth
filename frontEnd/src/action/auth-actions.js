@@ -32,3 +32,8 @@ export const signinRequest = user => dispatch => {
     })
     .catch(err => console.log(err));
 };
+
+export const signOut = () => {
+  localStorage.removeItem('token');
+  return tokenDelete();
+};

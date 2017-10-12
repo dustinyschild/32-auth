@@ -1,10 +1,11 @@
 import React from 'react';
 
-export default class galleryForm extends React.Component {
+export default class GalleryForm extends React.Component {
   constructor(props){
     super(props);
     this.state = {
       name: '',
+      desc: ''
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -25,10 +26,18 @@ export default class galleryForm extends React.Component {
         <input
           name="name"
           type="text"
-          placeholder="gallery Title"
+          placeholder="Gallery Title"
           value={this.state.name}
           onChange={this.handleChange}
         />
+        <input
+          name="desc"
+          type="text"
+          placeholder="Description"
+          value={this.state.desc}
+          onChange={this.handleChange}
+        />
+        <button type="submit">Create Gallery</button>
       </form>
     );
   }
