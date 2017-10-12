@@ -35,7 +35,8 @@ class SignInForm extends React.Component {
             placeholder="Username"
             value={this.state.username}
             onChange={this.handleChange}
-          /><input
+          />
+          <input
             name="password"
             type="password"
             placeholder="Password"
