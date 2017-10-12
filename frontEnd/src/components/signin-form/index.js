@@ -49,7 +49,7 @@ class SignInForm extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = () => ({});
 const mapDispatchToProps = dispatch => ({
   signIn: user => dispatch(authActions.signinRequest(user)),
 });
