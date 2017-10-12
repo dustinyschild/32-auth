@@ -21,11 +21,12 @@ class Dashboard extends React.Component {
         <div>
           <h2>Galleries</h2>
           {this.props.galleries.map(gallery => {
-            return(<GalleryItem
-              key={gallery._id}
-              gallery={gallery}
-              remove={this.props.removeGallery}>
-              {gallery.name}</GalleryItem>);
+            return(
+              <GalleryItem
+                key={gallery._id}
+                gallery={gallery}
+                remove={this.props.removeGallery}
+              />);
           })}
         </div>
       </div>
