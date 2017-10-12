@@ -2,10 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as galleryActions from '../../action/gallery-actions';
 import GalleryForm from '../gallery/form';
+import GalleryItem from '../gallery/item';
 
 class Dashboard extends React.Component {
   constructor(props){
     super(props);
+  }
+
+  componentWillMount(){
+    this.props.fetchGalleries();
   }
 
   render(){
@@ -16,7 +21,7 @@ class Dashboard extends React.Component {
         <div>
           <h2>Galleries</h2>
           {this.props.galleries.map(gallery => {
-            return(<p key={gallery._id}>{gallery.name}</p>);
+            return(<GalleryItem key={gallery._id} gallery={gallery}>{gallery.name}</GalleryItem>);
           })}
         </div>
       </div>
@@ -27,6 +32,7 @@ class Dashboard extends React.Component {
 const mapStateToProps = state => ({ galleries: state.galleries });
 
 const mapDispatchToProps = dispatch => ({
+  fetchGalleries: () => dispatch(galleryActions.fetchGalleriesRequest()),
   createGallery: gallery => dispatch(galleryActions.galleryCreateRequest(gallery)),
 });
 

@@ -42,7 +42,7 @@ export const galleryCreateRequest = gallery =>
       });
   };
 
-export const fetchGalleries = () => dispatch => {
+export const fetchGalleriesRequest = () => dispatch => {
   return request.get(`${API_URL}/api/galleries`)
     .set({Authorization: `Bearer ${localStorage.token}`})
     .then(res => dispatch(setGalleries(res.body)));
