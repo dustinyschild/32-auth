@@ -1,6 +1,6 @@
 
 const validatePic = payload => {
-  const { name, desc, imageURI, galleryID, objectKey } = payload;
+  const { name, desc, imageURI, galleryID } = payload;
 
   if(!name) throw new Error('Validation Error: `name` is required');
   if(!desc) throw new Error('Validation Error: `desc` is required');
