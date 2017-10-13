@@ -1,5 +1,8 @@
 import React from 'react';
 
+import PicForm from '../../pic-form';
+import PicItem from '../../pic-item';
+
 export default class GalleryItem extends React.Component {
   constructor(props){
     super(props);
@@ -18,6 +21,7 @@ export default class GalleryItem extends React.Component {
         <h2>{this.props.gallery.name}</h2>
         <p>{this.props.gallery.desc}</p>
         <button onClick={this.handleClick}>X</button>
+        <PicForm />
       </div>
     );
   }
