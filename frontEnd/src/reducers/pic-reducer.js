@@ -1,26 +1,27 @@
 
 const validatePic = payload => {
-  const { name, desc, imageURI, galleryID } = payload;
+  const { name,desc,file,gallery } = payload;
 
   if(!name) throw new Error('Validation Error: `name` is required');
   if(!desc) throw new Error('Validation Error: `desc` is required');
-  if(!imageURI) throw new Error('Validation Error: `imageURI` is required');
-  if(!galleryID) throw new Error('Validation Error: `galleryID` is required');
+  if(!file) throw new Error('Validation Error: `file` is required');
+  if(!gallery) throw new Error('Validation Error: `gallery` is required');
 };
 
 export default (state = {},action = {}) => {
   const { type,payload } = action;
-  const { galleryID } = payload;
   switch(type){
-    case 'PIC_CREATE':
+    case 'PIC_CREATE': {
       validatePic(payload);
+      let { gallery } = payload;
       return {
         ...state,
-        [galleryID]: [
-          ...state[galleryID],
+        [gallery]: [
+          ...state[gallery],
           payload
         ]
       };
+    }
     default:
       return state;
   }

@@ -21,7 +21,7 @@ export default class GalleryItem extends React.Component {
         <h2>{this.props.gallery.name}</h2>
         <p>{this.props.gallery.desc}</p>
         <button onClick={this.handleClick}>X</button>
-        <PicForm />
+        <PicForm gallery={this.props.gallery}/>
       </div>
     );
   }

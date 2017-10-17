@@ -5,14 +5,14 @@ const defaultState = {};
 deepFreeze(defaultState);
 
 test('create pic',() => {
-  const galleryID = 35;
+  const gallery = 35;
   const state = {
-    [galleryID]: [
+    [gallery]: [
       {
         name: 'old pic',
         desc: 'old description',
-        imageURI: `${__dirname}/../lib/traveler-test.png`,
-        galleryID
+        file: `${__dirname}/../lib/traveler-test.png`,
+        gallery
       }
     ]
   };
@@ -21,8 +21,8 @@ test('create pic',() => {
     payload: {
       name: 'new pic',
       desc: 'description',
-      imageURI: `${__dirname}/../lib/tester.png`,
-      galleryID
+      file: `${__dirname}/../lib/tester.png`,
+      gallery: gallery
     }
   };
   deepFreeze([state,action]);
@@ -33,14 +33,14 @@ test('create pic',() => {
       {
         name: 'old pic',
         desc: 'old description',
-        imageURI: `${__dirname}/../lib/traveler-test.png`,
-        galleryID
+        file: `${__dirname}/../lib/traveler-test.png`,
+        gallery
       },
       {
         name: 'new pic',
         desc: 'description',
-        imageURI: `${__dirname}/../lib/tester.png`,
-        galleryID
+        file: `${__dirname}/../lib/tester.png`,
+        gallery
       }
     ]
   });
