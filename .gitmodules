@@ -1,3 +1,6 @@
 [submodule "backend"]
 	path = backend
 	url = https://github.com/DeltaVCode-cr-401js-2017/19-deployment-demo.git
+[submodule "sluggram"]
+	path = sluggram
+	url = https://github.com/dustinyschild/sluggram.git
